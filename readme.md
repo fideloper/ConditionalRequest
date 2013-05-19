@@ -44,6 +44,11 @@ To install with Phpunit and Mockery to hack on:
 3. bool **doGet** () - Determine if your app should respond to a GET request with entity (the resource) or `304 Not Modified`
 4. bool **doUpate** () - Determine if your app should update the entity/resource in a PUT/POST request or respond with `412 Precondition Failed`
 
+## Usage:
+
+1. [Laravel/Symfony](https://github.com/fideloper/ConditionalRequest/wiki/Laravel-Symfony)
+2. Zend [Future]
+3. "Pure" PHP [Future]
 
 ## Some Explanation
 There are a few types of caching:
