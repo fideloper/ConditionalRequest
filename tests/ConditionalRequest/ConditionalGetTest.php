@@ -3,7 +3,7 @@
 use Mockery as m;
 use Fideloper\ConditionalRequest\Conditional;
 
-class ConditionalTest extends PHPUnit_Framework_TestCase {
+class ConditionalGetTest extends PHPUnit_Framework_TestCase {
 
     public function tearDown()
     {
