@@ -149,7 +149,7 @@ class Conditional {
         }
 
         // Second, Modification Date Validation
-        $ifUnmodifiedSince = $this->getIfUnmodifiedSince();
+        $ifUnmodifiedSince = $this->request->getIfUnmodifiedSince();
 
         if( $ifUnmodifiedSince && $this->request->attemptedEtag('if-match') === false )
         {
