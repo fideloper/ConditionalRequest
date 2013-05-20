@@ -87,7 +87,7 @@ class ConditionalGetTest extends PHPUnit_Framework_TestCase {
 
         $request = m::mock('Fideloper\ConditionalRequest\Request\RequestInterface');
         $request->shouldReceive('getIfNoneMatch')->once()->andReturn( array() );
-        $request->shouldReceive('getIfModifiedSince')->once()->andReturn( new DateTime('@'.$updated_at) );
+        $request->shouldReceive('getIfModifiedSince')->once()->andReturn( new DateTime('@'.$ifModifiedSince) );
         $request->shouldReceive('attemptedEtag')->once()->andReturn( true );
 
         $conditional = new Conditional( $request );
