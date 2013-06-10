@@ -1,5 +1,7 @@
 # Conditional Requests
 
+**Note:** This library has some [HTTP validation caching](http://symfony.com/doc/2.0/book/http_cache.html#index-10) logic that Symfony includes. Specifically, Symfony can handle Conditional GET requests "out of the box." However, this library also includes support for Concurrency Control (for validating POST or PUT update requests).
+
 ## The Situation
 Frameworks don't often give you tools to control HTTP caching mechanisms, such as setting ETags or Last-Modified dates.
 
