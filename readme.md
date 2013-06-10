@@ -1,5 +1,7 @@
 # Conditional Requests
 
+**Note:** This library has some [HTTP validation caching](http://symfony.com/doc/2.0/book/http_cache.html#index-10) logic that Symfony includes. Specifically, Symfony can handle Conditional GET requests "out of the box." However, this library also includes support for Concurrency Control (for validating POST or PUT update requests).
+
 ## The Situation
 Frameworks don't often give you tools to control HTTP caching mechanisms, such as setting ETags or Last-Modified dates.
 
@@ -78,9 +80,9 @@ A server can respond with the resource as normal, or return a `304 Not Modified`
 #### Concurrency Control
 In a PUT (or possibly POST) request, a server can check if the resource being updated was changed since the requester last checked (solves the [Lost Update Problem](http://www.w3.org/1999/04/Editing/)). This is good for APIs with a lot of writes (updates) to resources.
 
-A server can response with `412 Precondition Failed` if the client requesting the update doesn't have the latest knowledge of the resource.
+A server can respond with `412 Precondition Failed` if the client requesting the update doesn't have the latest knowledge of the resource.
 
 **This library is coded to help with Validation Cacheing.**
 
 ### Expiration caching
-Expiration caching, done with Expires, Cache-Control, Last-Modified and other headers, can aid in caching a response for the next user (or even for one specific user), saving your server(s) from some traffic load
+Expiration caching, done with Expires, Cache-Control, Last-Modified and other headers, can aid in caching a response for the next user (or even for one specific user), saving your server(s) from some traffic load.
